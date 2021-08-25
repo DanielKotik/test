@@ -1,6 +1,8 @@
 name: docs
 
 on:
+  pull_request_review:
+    types: [submitted,edited]
   pull_request:
     branches:
       - master
@@ -31,5 +33,5 @@ jobs:
         run: echo "Build apidoc"
 
       - name: Deploy
-        if: github.event.pull_request_review == 'submitted'
+        if: github.event.review.state == 'approved'
         run: echo "Deploy"
