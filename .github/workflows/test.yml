@@ -1,0 +1,34 @@
+name: docs
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+      - documentation
+  push:
+    branches:
+      - documentation
+      - develop
+
+
+jobs:
+  python-style-checks:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out repository
+        run: echo "Repo checkout"
+
+
+  build-and-deploy-pages:
+    needs: python-style-checks
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out repository
+        run: echo "Respo checkout"
+
+      - name: Build API and docs
+        run: echo "Build apidoc"
+
+      - name: Deploy
+        run: echo "Deploy"
