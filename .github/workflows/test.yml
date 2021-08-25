@@ -23,6 +23,8 @@ jobs:
 
 
   build-and-deploy-pages:
+    permissions:
+      deployments: write  # explicitly allows deploying to GitHub pages from forked repositories
     needs: python-style-checks
     runs-on: ubuntu-18.04
     steps:
