@@ -1,1 +1,1 @@
-This is entirely for testing somethin.
+This is entirely for testing something.
